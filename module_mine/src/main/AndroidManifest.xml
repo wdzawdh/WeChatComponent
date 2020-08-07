@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cw.mine">
+
+    <application>
+        <activity android:name=".pay.PayActivity" />
+        <activity android:name=".setting.SettingActivity" />
+    </application>
+</manifest>

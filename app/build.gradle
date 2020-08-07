@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.cw.application.api'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.java.javaVersion
+        targetCompatibility rootProject.ext.java.javaVersion
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation rootProject.ext.dependencies["androidx"]
+    implementation rootProject.ext.dependencies["material"]
+    //可以将不需要编译的模块注释（由于入口在:module_main，要注释:module_main需要将入口移到别的模块才能正常启动）
+    implementation project(path: ':module_main')
+    implementation project(path: ':module_chat')
+    implementation project(path: ':module_mine')
+    //也可将模块打包成arr供:app使用
+    /*implementation(name: 'api', ext: 'aar')
+    implementation(name: 'module_main', ext: 'aar')
+    implementation(name: 'module_chat', ext: 'aar')
+    implementation(name: 'module_mine', ext: 'aar')
+    implementation(name: 'lib_common', ext: 'aar')*/
+}

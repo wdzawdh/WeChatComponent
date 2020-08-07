@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cw.chat">
+
+    <application>
+        <activity android:name=".conversation.ConversationActivity" />
+        <activity android:name=".group.GroupActivity" />
+    </application>
+</manifest>

@@ -8,7 +8,9 @@ https://tech.meituan.com/2018/03/16/meituan-food-delivery-android-architecture-e
 ### 模块结构
 ```  
 模块分隔
-         ╱:module_main(模块一)╲
+               :api(模块间通信)
+                  ┊
+         ╱:module_main(模块一)╲ 
 :app(壳) ——:module_chat(模块二)—— :lib_common(基类，账号、网络、存储等业务) —— :lib_foundation(SDK)
          ╲:module_mine(模块三)╱
 

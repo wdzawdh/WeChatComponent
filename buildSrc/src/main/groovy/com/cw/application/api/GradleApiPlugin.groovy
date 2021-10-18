@@ -17,7 +17,7 @@ class GradleApiPlugin implements Plugin<Project> {
     private static final String GROUP_ID = "cw"
     private static final String TASK_NAME = "buildApi"
 
-    private boolean isAutoRun = false //是否自动执行
+    private boolean isAutoRun = true //是否自动执行
 
     @Override
     void apply(Project project) {

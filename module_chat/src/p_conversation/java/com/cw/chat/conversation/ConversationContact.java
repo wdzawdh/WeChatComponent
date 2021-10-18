@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.cw.chat.api.IConversation;
+import com.cw.chat.api.model.Conversation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Cw
@@ -24,8 +28,8 @@ public class ConversationContact implements IConversation {
     }
 
     @Override
-    public int getUnreadCount() {
-        return 99;
+    public List<Conversation> getConversationList() {
+        return new ArrayList<>();
     }
 
     @Override

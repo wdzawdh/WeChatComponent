@@ -9,7 +9,7 @@ import com.cw.mine.R
  * @author Cw
  * @date 2020/8/7
  */
-class MineFragment :BaseFragment(){
+class MineFragment : BaseFragment() {
     companion object {
         fun newInstance(): MineFragment {
             val fragment = MineFragment()
